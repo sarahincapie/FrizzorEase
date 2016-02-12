@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 
 def home
-    @weather_lookup = WeatherLookup.new
+    @wynweather = Weather.new
 end
 
 end
