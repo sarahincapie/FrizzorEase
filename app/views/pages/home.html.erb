@@ -1,6 +1,54 @@
 
 
 
-<h1>WynWeather</h1>
+<h1>Frizz or Ease </h1>
 
-It is <%= @wynweather.temperature %> degrees in wynwood!
+
+<%= form_tag(root_path, method: "get") do %>
+  <%= label_tag :zip, "ENTER YOUR ZIPCODE, FIND OUT WHAT KIND OF HAIR DAY ARE YOU HAVING"  %><br>
+  <%= text_field_tag :zip,'', placeholder: "e.g. 33137 " %>
+  <%= submit_tag "I'VE GOT 99 PROBLEMS AND MAYBE MY HAIR WILL BE ONE" %>
+<% end %>
+
+
+<br>
+<br>
+<br>
+
+
+The temperature is:
+<%= @wynweather.temperature %>
+the humidity is: 
+<%= @wynweather.humidity %>
+
+<br>
+<br>
+<br> 
+
+<% if @wynweather.humidity.to_i < 27 %>
+
+	 <%= image_tag 'pretty.gif' %>
+       
+
+<% elsif %>
+     
+      <% @wynweather.humidity.to_i > 40 %>  
+       
+        <%= image_tag 'donald.gif' %>
+
+
+
+<% elsif %>
+      
+      <% @wynweather.humidity.to_i > 70 %>  
+       
+        <%= image_tag 'orange.gif' %>
+
+
+
+
+        <% else %>
+
+     <%= image_tag 'hair.gif' %>
+
+<% end %>
